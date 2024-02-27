@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <title>users</title>
+{% endblock %}
+
+{% block body %}
+     
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                    {% for element in MyUsers[0].keys() %}
+                           <th scope="col">{{element}}</th>
+                    {% endfor %}
+                    
+              </tr>
+            </thead>
+            <tbody>
+                    {% for user in MyUsers %} 
+                         <tr>
+                                <th scope="row">{{loop.index}}</th>
+                                {% for element in user.values() %}  
+                                     <td> {{ element }}</td>
+                                {% endfor %}
+                                <td> <a class="btn btn-danger" href="{{ url_for('delete_user',id=user.id) }}">Delete</a> </td>
+                                <td> <a class="btn btn-success" href="{{ url_for('update_user',id=user.id) }}">Update</a> </td>
+                        </tr>      
+                    {% endfor %}
+                  
+                    
+            </tbody>
+          </table>
+{% endblock %}
+
+
+
+

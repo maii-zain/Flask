@@ -1,0 +1,38 @@
+{% extends "Index.html" %}
+{% block form %}
+<br/>
+<div class="container">
+    <div class="card" style="max-width: 400px; margin: auto;">
+        <div class="card-header">
+            <h1 class="text-center">Edit User</h1>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" id="name" name="name" value="{{ user.name }}" class="form-control" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" id="age" name="age" value="{{ user.age }}" class="form-control" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="course" class="form-label">Course:</label>
+                    <input type="text" id="course" name="Course" value="{{ user.Course }}" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="branch" class="form-label">Branch:</label>
+                    <input type="text" id="branch" name="Branch" value="{{ user.Branch }}" class="form-control" required>
+                </div>
+            
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Update User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

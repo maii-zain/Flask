@@ -1,0 +1,35 @@
+{% extends 'Index.html' %}
+{% block form %}
+<body>
+    <div class="container" style="max-width: 600px; margin: auto; padding-top: 50px;">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Create User</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('AddUser') }}">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" name="age" class="form-control" id="age" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Course" class="form-label">Course</label>
+                        <input type="text" name="Course" class="form-control" id="Course" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Branch" class="form-label">Branch</label>
+                        <input type="text" name="Branch" class="form-control" id="Branch" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Save User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
